@@ -1,9 +1,5 @@
 # Getting Started with Create React App
 
-![Screenshot_2021-03-06 React App](https://user-images.githubusercontent.com/60151264/110207574-1f90bd80-7e8d-11eb-8b39-c65de3c0c1c2.png)
-
-![Screenshot_2021-03-06 React App(2)](https://user-images.githubusercontent.com/60151264/110207604-47802100-7e8d-11eb-8172-000fe16ea053.png)
-
 In the project directory, you can run:
 
 ### `npm start`

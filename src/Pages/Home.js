@@ -30,7 +30,7 @@ function Home() {
         <div>
             <Card />
             <Post limit={limit} post={post}/>
-            <button onClick={() => setLimit(limit => limit + 5)} className="post__button">Show more</button>
+            <button onClick={() => setLimit(limit => limit + 5)} className="post__btn">Show more</button>
         </div>
     )
 }

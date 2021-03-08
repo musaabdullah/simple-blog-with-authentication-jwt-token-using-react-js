@@ -1,5 +1,6 @@
 import React from 'react'
 import IMG from './IMG.jpg';
+import { Link } from 'react-router-dom';
 
 function Post({post, limit}) {
     return (
@@ -18,7 +19,7 @@ function Post({post, limit}) {
                 {p.body}
             </div>
             </div>
-            <button className="post__button">Read more</button>
+            <Link className="post__button" to={`/post/${p.id}`}>Read more</Link>
         </div>
 ))}
         </div>

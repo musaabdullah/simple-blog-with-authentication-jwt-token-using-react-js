@@ -56,6 +56,7 @@
     align-items: center;
     background: rebeccapurple;
     color: white;
+    padding: 15px;
 }
 
 .card__search {
@@ -141,3 +142,7 @@
     background:green;
 }
 
+.card__user a{
+ color: white;
+ padding: 10px;
+}

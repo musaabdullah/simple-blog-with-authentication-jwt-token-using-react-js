@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import './style.css';
-import { Link } from 'react-router-dom';
+import { Link, Redirect, useHistory } from 'react-router-dom';
 import axios from 'axios';
 
 function Login() {
@@ -13,6 +13,7 @@ function Login() {
 
     const [registered, setRegistered] = useState(false);
     const [message, setMessage] = useState("");
+    const history = useHistory();
 
     const handleLogin = async (e) => {
       e.preventDefault();
@@ -21,6 +22,7 @@ function Login() {
         const res = await axios.post("login", {email, password});
         if(res.data.success){
              console.log("sccuess true");
+             history.push("/");
         }else {
           setMessage(res.data.error);
           console.log(res.data.error)

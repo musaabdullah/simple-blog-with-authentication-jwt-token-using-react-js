@@ -10,6 +10,8 @@
 
 ![Screenshot_2021-03-08 React App(1)](https://user-images.githubusercontent.com/60151264/110299523-6ce06c80-7ffe-11eb-80bd-501eac9c805d.png)
 
+![Screenshot_2021-03-08 React App(2)](https://user-images.githubusercontent.com/60151264/110311208-209c2900-800c-11eb-8aa8-f18f6ec4565e.png)
+
 In the project directory, you can run:
 
 ### `npm start`

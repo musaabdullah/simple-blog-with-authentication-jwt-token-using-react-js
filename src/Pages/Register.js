@@ -14,19 +14,19 @@ function Register() {
     const handleValid = (e) => {
       e.preventDefault();
       if(!fullName){
-        setErrorFullName("لا يمكن ترك أسم المستخدم فارغا")
+        setErrorFullName("You can't leave full name empty")
       }else{
         setErrorFullName("");
       }
       if(!email){
-        setErrorEmail("لا يمكن ترك بريد المستخدم فارغا")
+        setErrorEmail("You can't leave email empty")
       }else {
         setErrorEmail("");
       }
       if(!password){
-        setErrorPassword("لا يمكن ترك كلمة المرور فارغا");
+        setErrorPassword("You can't leave password empty");
       }else if(password.length < 6) {
-        setErrorPassword("كلمة المرور يجب ان تكون اكثر من سته احروف")
+        setErrorPassword("Password must be more 6 character")
       }else {
         setErrorPassword("");
       }
@@ -35,16 +35,16 @@ function Register() {
     return (
         <div className="body">
         <div className="container">
-        <div className="container__title">أنشاء حساب</div>
+        <div className="container__title">create account</div>
       
       
-        <div dir="rtl" className="container__body">
+        <div className="container__body">
           <form className="form"> 
              <div className="form__group">
                 <i className="fa fa-user"></i>
                 <input 
                 type="text"
-                placeholder="أسم السمتخدم"
+                placeholder="Full Name"
                 value={fullName}
                 onChange={(e) => setFullName(e.target.value)} />
              </div>
@@ -53,7 +53,7 @@ function Register() {
                 <i className="fa fa-envelope"></i>
                 <input 
                 type="email" 
-                placeholder="أيميل المستخدم" 
+                placeholder="Email" 
                 value={email}
                 onChange = {(e) => setEmail(e.target.value)}
                 />
@@ -63,19 +63,19 @@ function Register() {
                 <i className="fa fa-unlock-alt"></i>
                 <input 
                 type="password" 
-                placeholder="كلمة المرور"
+                placeholder="Password"
                 value = {password}
                 onChange = {(e) => setPassword(e.target.value)}
                 /><br/>
              </div>
              {errorPassword && <p className="error">{errorPassword}</p>}
       
-             <button className="form__button" onClick={handleValid}>سجل حساب</button>
+             <button className="form__button" onClick={handleValid}>sigup</button>
           </form>
         </div>
           <div className="container__footer">
           <div className="footer__title">
-             اذا كان عندك حساب سابقا؟<Link to="/login">تسجيل دخول</Link>
+                 If you already have an account ?<Link to="/login">Login</Link>
           </div>
         </div>
       </div>

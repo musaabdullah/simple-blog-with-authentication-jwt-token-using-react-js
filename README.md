@@ -2,9 +2,9 @@
 
 ![Screenshot_2021-03-07 React App](https://user-images.githubusercontent.com/60151264/110232861-09d0d600-7f29-11eb-8366-c5c42fa6694f.png)
 
-![Screenshot_2021-03-07 React App(2)](https://user-images.githubusercontent.com/60151264/110232875-23721d80-7f29-11eb-8be2-f66276389147.png)
+![Screenshot_2021-03-07 React App(2)](https://user-images.githubusercontent.com/60151264/110281825-17986100-7fe6-11eb-8672-4f61ad61ce65.png)
 
-![Screenshot_2021-03-07 React App(1)](https://user-images.githubusercontent.com/60151264/110232942-a09d9280-7f29-11eb-8689-1d597eb686ae.png)
+![Screenshot_2021-03-07 React App(1)](https://user-images.githubusercontent.com/60151264/110281932-457da580-7fe6-11eb-823b-813196b86d23.png)
 
 In the project directory, you can run:
 

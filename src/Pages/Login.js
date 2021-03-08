@@ -14,14 +14,14 @@ function Login() {
       e.preventDefault();
     
       if(!email){
-        setErrorEmail("لا يمكن ترك بريد المستخدم فارغا")
+        setErrorEmail("You can't leave email empty")
       }else {
         setErrorEmail("");
       }
       if(!password){
-        setErrorPassword("لا يمكن ترك كلمة المرور فارغا");
+        setErrorPassword("You can't leave password empty");
       }else if(password.length < 6) {
-        setErrorPassword("كلمة المرور يجب ان تكون اكثر من سته احروف")
+        setErrorPassword("Password must be more 6 character long")
       }else {
         setErrorPassword("");
       }
@@ -30,17 +30,17 @@ function Login() {
     return (
         <div className="body">
         <div className="container">
-        <div className="container__title">تسجيل الدخول</div>
+        <div className="container__title">Login</div>
       
       
-        <div dir="rtl" className="container__body">
+        <div className="container__body">
           <form className="form"> 
            
              <div className="form__group">
                 <i className="fa fa-envelope"></i>
                 <input 
                 type="email" 
-                placeholder="أيميل المستخدم" 
+                placeholder="Email" 
                 value={email}
                 onChange = {(e) => setEmail(e.target.value)}
                 />
@@ -50,19 +50,19 @@ function Login() {
                 <i className="fa fa-unlock-alt"></i>
                 <input 
                 type="password" 
-                placeholder="كلمة المرور"
+                placeholder="Password"
                 value = {password}
                 onChange = {(e) => setPassword(e.target.value)}
                 /><br/>
              </div>
              {errorPassword && <p className="error">{errorPassword}</p>}
       
-             <button className="form__button" onClick={handleValid}>سجل حساب</button>
+             <button className="form__button" onClick={handleValid}>sigin</button>
           </form>
         </div>
           <div className="container__footer">
           <div className="footer__title">
-             اذا ليس كان عندك حساب سابقا؟<Link to="/register">تسجيل حساب</Link>
+                If you don't have an account?<Link to="/register">sigup</Link>
           </div>
         </div>
       </div>

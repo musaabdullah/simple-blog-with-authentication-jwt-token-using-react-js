@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import './style.css';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 function Register() {
 
     const [fullName, setFullName] = useState();
@@ -10,9 +11,42 @@ function Register() {
     const [errorFullName, setErrorFullName] = useState();
     const [errorEmail, setErrorEmail] = useState();
     const [errorPassword, setErrorPassword] = useState();
-  
-    const handleValid = (e) => {
+
+    const [registered, setRegistered] = useState(false);
+    
+    const [isPending, setIsPending] = useState(false);
+
+    const closeBtn = () => {
+      setRegistered(false);
+    }
+
+    const handleRegister = async (e) => {
       e.preventDefault();
+      handleValid();
+        try {
+          setIsPending(true);
+          const res = await axios.post("register", {fullName, email, password});
+          console.log(res.data);
+
+          if(res.data.success) {
+           setRegistered(true);
+          } else {
+            console.log(res.data.error);
+          }
+          setIsPending(false);
+        } catch(error) {
+          console.log(error.message);
+        }
+
+        setFullName("");
+        setEmail("");
+        setPassword("");
+
+    }
+    
+
+
+    const handleValid = () => {
       if(!fullName){
         setErrorFullName("You can't leave full name empty")
       }else{
@@ -30,14 +64,16 @@ function Register() {
       }else {
         setErrorPassword("");
       }
+
     }
 
     return (
         <div className="body">
         <div className="container">
         <div className="container__title">create account</div>
-      
-      
+        {registered && <div className="container__success">
+          <div>User registered successfully</div><i onClick={() => closeBtn()} className="fa fa-close btn__close"></i>
+        </div> }
         <div className="container__body">
           <form className="form"> 
              <div className="form__group">
@@ -70,7 +106,8 @@ function Register() {
              </div>
              {errorPassword && <p className="error">{errorPassword}</p>}
       
-             <button className="form__button" onClick={handleValid}>sigup</button>
+            {!isPending && <button className="form__button" onClick={handleRegister}>sigup</button> }
+             {isPending && <button className="form__button"  >Pending data...</button>}
           </form>
         </div>
           <div className="container__footer">
